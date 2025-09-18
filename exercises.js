@@ -18,18 +18,28 @@ console.log("\n> Ejercicio 1: Crear tu perfil");
 console.log("Completa la información y muestra un saludo personalizado:");
 
 // TODO: Completa estas variables con tu información
-const miNombre = ""; // Tu nombre aquí
-const miEdad = 0; // Tu edad aquí
-const miCiudad = ""; // Tu ciudad aquí
-const misHobbies = []; // Agrega 3 hobbies en este array
+const miNombre = "Isa"; // Tu nombre aquí
+const miEdad = 40; // Tu edad aquí
+const miCiudad = "Cartagena"; // Tu ciudad aquí
+const misHobbies = ["Estudiar", "Leer", "Dormir"]; // Agrega 3 hobbies en este array
 
 // TODO: Crea un objeto con tu información personal
 const miPerfil = {
+  miNombre, 
+  miEdad, 
+  miCiudad, 
+  misHobbies, 
+  saludar: function(){
+    return `Saludos desde ${this.miCiudad}!!! :)`;
+  }
   // Agrega: nombre, edad, ciudad, hobbies, y un método saludar()
 };
 
 // TODO: Muestra tu información usando template literals
-const presentacion = ``; // Crea un mensaje de presentación
+const presentacion = `Hola, Soy ${miPerfil.miNombre}, tengo ${miPerfil.miEdad} años, 
+vivo en ${miPerfil.miCiudad} y mis hobbies son: ${miPerfil.misHobbies}. ${miPerfil.saludar()}`;
+
+; // Crea un mensaje de presentación
 
 console.log("Mi presentación:");
 console.log(presentacion || ">> Completa el ejercicio");
