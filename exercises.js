@@ -49,19 +49,48 @@ console.log("\n> Ejercicio 2: Calculadora con validaciones");
 console.log("Crea funciones matemáticas con validaciones:");
 
 // TODO: Completa estas funciones
-function calcular(operacion, num1, num2) {
   // Valida que los números sean válidos
   // Usa switch para las operaciones: "suma", "resta", "multiplicar", "dividir"
   // Valida división por cero
   // Retorna el resultado o un mensaje de error
+function calcular(operacion, num1, num2) {
+  if (typeof num1 !== "number" || typeof num2 !== "number"){
+    return 'Solo operaciones con numeros';
+  }else{
+    switch (operacion){
+      case 'suma':
+        return num1 + num2;
+      case 'resta':
+        return num1 - num2;
+      case 'multiplicar':
+        return num1 * num2;
+      case 'dividir':
+        if(num2 === 0){
+          return 'El divisor no puede ser cero';
+        }else{
+          return num1 / num2;
+        }
+    }
+  }
 }
+  
 
 function esPar(numero) {
   // Retorna true si el número es par, false si es impar
+  if(numero % 2 === 0){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 function esPositivo(numero) {
   // Retorna true si el número es positivo, false si es negativo o cero
+  if(numero > 0){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 // Pruebas del ejercicio 2
